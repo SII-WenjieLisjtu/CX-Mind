@@ -71,6 +71,12 @@ class FunctionRewardManager(ABC):
         self.config = config
         self.tokenizer = tokenizer
 
+
+        # —— 新增 EMA 及其参数 ——
+        self.ema: float = None
+        self.ema_alpha: float = config.reward_function_kwargs.get("ema_alpha", 0.2)
+        self.ema_margin: float = config.reward_function_kwargs.get("ema_margin", 0.0)
+
     @abstractmethod
     def compute_reward(self, data: DataProto) -> Tuple[torch.Tensor, Dict[str, List[float]]]:
         """Compute reward for a batch of data."""
@@ -123,8 +129,24 @@ class BatchFunctionRewardManager(FunctionRewardManager):
                     "ground_truth": data.non_tensor_batch["ground_truth"][i],
                 }
             )
-
+        
         scores = self.reward_fn(reward_inputs)
+        batch_acc = sum(s["f1"] for s in scores) / max(len(scores), 1)
+        #  用 EMA + margin 判断本批次是否“稳定”
+        if self.ema is None:
+            self.ema = batch_acc
+            stable = True
+        else:
+            stable = bool(batch_acc >= self.ema + self.ema_margin)
+            # 更新 EMA
+
+        # 3. 合成最终 reward
+        for s in scores:
+            s["overall"] = s["base_reward"] + (s["reason"] if stable else 0.0)
+
+        self.ema = self.ema_alpha * batch_acc + (1 - self.ema_alpha) * self.ema
+
+        # scores = self.reward_fn(reward_inputs,stable=stable)
         reward_tensor = torch.zeros_like(data.batch["responses"], dtype=torch.float32)
         reward_metrics = defaultdict(list)
         for i, score in enumerate(scores):

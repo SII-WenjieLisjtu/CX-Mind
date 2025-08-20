@@ -39,6 +39,18 @@ class ConsoleGenerationLogger(GenerationLogger):
     def log(self, samples: List[Tuple[str, str, str, float]], step: int) -> None:
         for inp, out, lab, score in samples:
             print(f"[prompt] {inp}\n[output] {out}\n[ground_truth] {lab}\n[score] {score}\n")
+        log_path = "generation_samples.txt"
+        with open(log_path, "a", encoding="utf-8") as f:
+            for inp, out, lab, score in samples:
+                line = (
+                    "----------------------------------------\n"
+                    f"[step {step}]\n"
+                    f"[prompt]       {inp}\n"
+                    f"[output]       {out}\n"
+                    f"[ground_truth] {lab}\n"
+                   f"[score]        {score}\n\n"
+                )
+                f.write(line)
 
 
 @dataclass

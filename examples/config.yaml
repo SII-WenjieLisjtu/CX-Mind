@@ -7,18 +7,18 @@ data:
   video_key: videos
   image_dir: null
   video_fps: 2.0
-  max_prompt_length: 2048
-  max_response_length: 2048
+  max_prompt_length: 4096
+  max_response_length: 4096                                                         
   rollout_batch_size: 512  # equivalent to verl's data.train_batch_size
   mini_rollout_batch_size: null  # equivalent to verl's data.gen_batch_size
   val_batch_size: 1024
-  format_prompt: ./examples/format_prompt/math.jinja
+  # format_prompt: ./examples/format_prompt/open.jinja
   override_chat_template: null
   shuffle: true
   seed: 1
   min_pixels: 262144
   max_pixels: 4194304
-  filter_overlong_prompts: true
+  filter_overlong_prompts: false
 
 algorithm:
   adv_estimator: grpo
@@ -33,8 +33,8 @@ algorithm:
 
 worker:
   actor:
-    global_batch_size: 128  # equivalent to verl's actor.ppo_mini_batch_size
-    micro_batch_size_per_device_for_update: 4  # equivalent to verl's actor.ppo_micro_batch_size_per_gpu
+    global_batch_size: 16  # equivalent to verl's actor.ppo_mini_batch_size
+    micro_batch_size_per_device_for_update: 10  # equivalent to verl's actor.ppo_micro_batch_size_per_gpu
     micro_batch_size_per_device_for_experience: 16  # equivalent to verl's rollout.log_prob_micro_batch_size_per_gpu
     max_grad_norm: 1.0
     padding_free: true
@@ -81,10 +81,10 @@ worker:
 
   reward:
     reward_type: batch
-    reward_function: ./examples/reward_function/math.py:compute_score
+    reward_function: ./examples/reward_function/openQA.py:compute_score
 
 trainer:
-  total_epochs: 15
+  total_epochs: 2
   max_steps: null
   project_name: easy_r1
   experiment_name: qwen2_5_7b_math_grpo
@@ -92,12 +92,12 @@ trainer:
   nnodes: 1
   n_gpus_per_node: 8
   max_try_make_batch: 20  # -1 means no limit
-  val_freq: 5  # -1 to disable
+  val_freq: 3  # -1 to disable
   val_before_train: true
   val_only: false
-  val_generations_to_log: 3
-  save_freq: 5  # -1 to disable
-  save_limit: 3  # -1 to disable
+  val_generations_to_log: 1
+  save_freq: 10  # -1 to disable
+  save_limit: 5  # -1 to disable
   save_model_only: false
   save_checkpoint_path: null
   load_checkpoint_path: null

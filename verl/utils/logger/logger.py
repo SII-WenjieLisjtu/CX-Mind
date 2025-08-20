@@ -58,6 +58,7 @@ class ConsoleLogger(Logger):
 
     def log(self, data: Dict[str, Any], step: int) -> None:
         print(f"Step {step}\n" + convert_dict_to_str(unflatten_dict(data)))
+        print("--------------------------------------------------")
 
 
 class MlflowLogger(Logger):
