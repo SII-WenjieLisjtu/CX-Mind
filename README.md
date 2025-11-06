@@ -49,9 +49,12 @@ pip install -e .
 
 
 ## Star Chart
-[![Star History Chart](https://api.star-history.com/svg?repos=SII-zyj/CX-Mind-private&type=Date)](https://star-history.com/#SII-zyj/CX-Mind-private&Date)
-
-
+<h2>Star Chart</h2>
+<p align="center">
+  <a href="https://star-history.com/#SII-zyj/CX-Mind-private&Date">
+    <img src="https://api.star-history.com/svg?repos=SII-zyj/CX-Mind-private&type=Date" alt="Star History Chart" width="800">
+  </a>
+</p>
 
 ## Licence
 
