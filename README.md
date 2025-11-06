@@ -4,6 +4,13 @@
 
 ## CX-Mind
 
+<figure style="margin:16px auto; text-align:center;">
+  <img src="overview.png"
+       style="max-width:100%; width:900px; height:auto; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,.08);" />
+  <figcaption style="font-size:14px; color:#666; margin-top:8px;">
+    Figure 1. CX-Mind overview.
+  </figcaption>
+</figure>
 
 Key insights:
 
