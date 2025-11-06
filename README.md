@@ -59,5 +59,10 @@ This project is released under [Apache licence](./LICENSE).
 ## Citation
 
 ```
-
+@article{li2025cx,
+  title={CX-Mind: A Pioneering Multimodal Large Language Model for Interleaved Reasoning in Chest X-ray via Curriculum-Guided Reinforcement Learning},
+  author={Li, Wenjie and Zhang, Yujie and Sun, Haoran and Li, Yueqi and Zhang, Fanrui and Xu, Mengzhe and Clausich, Victoria Borja and Mellin, Sade and Yang, Renhao and Wang, Chenrun and others},
+  journal={arXiv preprint arXiv:2508.03733},
+  year={2025}
+}
 ```
