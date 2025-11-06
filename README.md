@@ -1,11 +1,9 @@
-<div align="center"> <img src="logo.png" alt="logo" height="150"> <h1 style="font-size: 16px; font-weight: bold;"> CX-Mind: A Pioneering Multimodal Large Language Model for Interleaved Reasoning in Chest X-ray via Curriculum-Guided Reinforcement Learning </h1> <br> <a href="[https://arxiv.org/abs/2505.14362](https://arxiv.org/abs/2508.03733)"> <img src="https://img.shields.io/badge/ArXiv-CXMind-brown?logo=arxiv" alt="Paper"> </a> <a href="https://huggingface.co/SII-JasperLi77/CX-Mind"> <img src="https://img.shields.io/badge/🤗 huggingface-Model-purple" alt="checkpoint"> </a> </div>
-
-
+<div align="center"> <img src="docs/logo.png" alt="logo" height="150"> <h1 style="font-size: 16px; font-weight: bold;"> CX-Mind: A Pioneering Multimodal Large Language Model for Interleaved Reasoning in Chest X-ray via Curriculum-Guided Reinforcement Learning </h1> <br> <a href="[https://arxiv.org/abs/2505.14362](https://arxiv.org/abs/2508.03733)"> <img src="https://img.shields.io/badge/ArXiv-CXMind-brown?logo=arxiv" alt="Paper"> </a> <a href="https://huggingface.co/SII-JasperLi77/CX-Mind"> <img src="https://img.shields.io/badge/🤗 huggingface-Model-purple" alt="checkpoint"> </a> </div>
 
 ## CX-Mind
 
 <figure style="margin:16px auto; text-align:center;">
-  <img src="overview.png"
+  <img src="docs/overview.png"
        style="max-width:100%; width:900px; height:auto; border-radius:12px; box-shadow:0 4px 24px rgba(0,0,0,.08);" />
   <figcaption style="font-size:14px; color:#666; margin-top:8px;">
   </figcaption>
