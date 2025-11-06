@@ -18,6 +18,7 @@ Key insights:
 
 ### Environment Setup
 ```bash
+# Follow the Easy-R1 official installation procedure
 git clone https://github.com/SII-zyj/CX-Mind-private.git
 cd CX-Mind
 pip install -e .
