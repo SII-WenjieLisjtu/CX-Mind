@@ -75,8 +75,6 @@ We provide evaluation scripts to evaluate the performance of the trained models.
 ./eval/eval_open.py
 ```
 
-**Important**:
-
 
 
 <h2>Star Chart</h2>
