@@ -82,7 +82,7 @@ We provide evaluation scripts to evaluate the performance of the trained models.
 <h2>Star Chart</h2>
 <p align="center">
   <a href="https://star-history.com/#SII-WenjieLisjtu/CX-Mind&Date">
-    <img src="https://api.star-history.com/svg?repos=SII-zyj/CX-Mind-private&type=Date" alt="Star History Chart" width="800">
+    <img src="https://api.star-history.com/svg?repos=SII-WenjieLisjtu/CX-Mind&type=Date" alt="Star History Chart" width="800">
   </a>
 </p>
 
