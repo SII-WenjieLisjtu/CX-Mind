@@ -26,8 +26,8 @@ Key insights:
 ## News and Updates
 
 - **2025-12-01** 🎉 Our CX-Mind paper is accepted by **Information Fusion**.  
-- **2025-07-31** 🔥 We release **CX-Mind-7B** on arXiv and Hugging Face — [arXiv:2508.03733](https://arxiv.org/abs/2508.03733) 
-- **2023-07-31** 🔥 We published the first **CX-Mind** paper as an arXiv preprint.  
+- **2025-07-31** 🔥 We release our model **CX-Mind-7B** on Hugging Face [huggingface](https://huggingface.co/SII-JasperLi77/CX-Mind) .
+- **2023-07-31** 🔥 We published the first **CX-Mind** paper as an arXiv preprint [arXiv:2508.03733](https://arxiv.org/abs/2508.03733) .  
 
 <br>
 
